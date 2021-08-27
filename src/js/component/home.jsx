@@ -9,7 +9,7 @@ import { CountDown } from "./CountDown";
 const Home = () => {
 	return (
 		<div className="text-center mt-5">
-			<SecondsCounter seconds={3600}></SecondsCounter>
+			<SecondsCounter seconds={20}></SecondsCounter>
 			<div className="mt-5">
 				<CountDown></CountDown>
 			</div>

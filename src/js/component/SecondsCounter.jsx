@@ -10,6 +10,9 @@ const SecondsCounter = ({ seconds }) => {
 		if (counter < seconds && status === "init") {
 			timer.current = setInterval(() => setCounter(counter + 1), 1000);
 		}
+		if (counter === seconds) {
+			setStatus("reached");
+		}
 		return () => {
 			clearInterval(timer.current);
 		};
@@ -69,6 +72,13 @@ const SecondsCounter = ({ seconds }) => {
 					</div>
 				</div>
 			</div>
+			{status === "reached" && (
+				<div className="w-100 mt-3">
+					<div className="alert alert-primary" role="alert">
+						Time out!
+					</div>
+				</div>
+			)}
 			<div className="w-100 d-flex justify-content-center mt-4">
 				<button
 					type="button"
